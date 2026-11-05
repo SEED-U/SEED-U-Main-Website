@@ -1,6 +1,6 @@
 # SEED U Website
 
-The official website for **SEED U**, which is building India's first linguistic operating system: verified multilingual datasets and AI infrastructure for 22+ regional languages.
+The official website for **SEED U**, an early-stage initiative focused on useful AI for Indian languages and local contexts, starting with Marathi Agriculture AI in Maharashtra.
 
 ## Tech stack
 
@@ -45,7 +45,7 @@ In production, these are set in the Vercel project under **Settings → Environm
 ```
 app/
 ├── api/contact/route.ts   # POST endpoint that emails contact form submissions
-├── components/            # Page sections (Hero, About, Team, India map, Contact, etc.)
+├── components/            # Page sections (Hero, About, Focus, Team, Contact, etc.)
 ├── globals.css            # Tailwind setup and theme tokens
 ├── layout.tsx             # Root layout, fonts and SEO metadata
 └── page.tsx               # Home page

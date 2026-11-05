@@ -15,22 +15,21 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "SEED U — India's First Linguistic OS | AI for Regional Languages",
+  title: "SEED U — Useful AI for India's Languages and Real-World Contexts",
   description:
-    "SEED U is building India's first linguistic operating system — verified multilingual datasets, zero-hallucination RAG infrastructure, and a data-first AI ecosystem for 22+ regional languages.",
+    "SEED U is an early-stage initiative developing useful AI for Indian languages and local contexts, starting with Marathi Agriculture AI in Maharashtra.",
   keywords: [
     "SEED U",
-    "Linguistic OS",
-    "India AI",
-    "Regional Languages",
-    "Multilingual AI",
-    "RAG Infrastructure",
-    "NLP India",
+    "Marathi AI",
+    "Agriculture AI",
+    "Maharashtra",
+    "Indian Languages",
+    "Regional Language AI",
   ],
   openGraph: {
-    title: "SEED U — India's First Linguistic OS",
+    title: "SEED U — Useful AI for India's Languages and Real-World Contexts",
     description:
-      "Building AI infrastructure for India's regional languages and cultural intelligence.",
+      "An early-stage initiative starting with Marathi Agriculture AI in Maharashtra.",
     type: "website",
     locale: "en_IN",
   },

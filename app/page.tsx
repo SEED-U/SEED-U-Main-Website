@@ -1,6 +1,7 @@
 import Navbar from "./components/Navbar";
 import HeroSection from "./components/HeroSection";
 import AboutSection from "./components/AboutSection";
+import FocusSection from "./components/FocusSection";
 import CTABanner from "./components/CTABanner";
 import TeamSection from "./components/TeamSection";
 import ContactSection from "./components/ContactSection";
@@ -14,6 +15,8 @@ export default function Home() {
         <HeroSection />
         <div className="section-divider" />
         <AboutSection />
+        <div className="section-divider" />
+        <FocusSection />
         <CTABanner />
         <div className="section-divider" />
         <TeamSection />

@@ -38,10 +38,10 @@ export default function CTABanner() {
 
           <div className="relative z-10">
             <h2 className="font-heading text-2xl font-bold text-white sm:text-3xl lg:text-4xl">
-              Ready to Build AI That Speaks India?
+              Interested in What We&apos;re Exploring?
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-base text-white/80 sm:text-lg">
-              Join us in creating the linguistic infrastructure that will power the next generation of AI — for every language, every dialect, every voice.
+              We welcome conversations with agriculture experts, researchers, and potential partners who care about useful, locally relevant AI.
             </p>
             <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <button
@@ -51,7 +51,7 @@ export default function CTABanner() {
                 Partner With Us
               </button>
               <button
-                onClick={() => document.querySelector("#about")?.scrollIntoView({ behavior: "smooth" })}
+                onClick={() => document.querySelector("#focus")?.scrollIntoView({ behavior: "smooth" })}
                 className="cursor-pointer rounded-full border-2 border-white/30 px-8 py-3 text-base font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:border-white/60 hover:bg-white/10 hover:scale-105 active:scale-95"
               >
                 Learn More

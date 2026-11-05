@@ -33,22 +33,30 @@ export default function ContactSection() {
       message: fd.get("message"),
     };
 
+    const form = e.currentTarget;
+    let res: Response;
     try {
-      const res = await fetch("/api/contact", {
+      res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body),
       });
-      if (!res.ok) {
-        const data = await res.json();
-        throw new Error(data.error || "Something went wrong");
-      }
-      setStatus("success");
-      (e.target as HTMLFormElement).reset();
-    } catch (err: unknown) {
-      setErrorMsg(err instanceof Error ? err.message : "Failed to send");
+    } catch {
+      setErrorMsg("We couldn't reach the server. Please check your connection and try again.");
       setStatus("error");
+      return;
     }
+
+    if (!res.ok) {
+      // The response may not be JSON (e.g. a platform timeout page)
+      const data = await res.json().catch(() => null);
+      setErrorMsg(data?.error || "Sorry, your message could not be sent. Please try again in a few minutes.");
+      setStatus("error");
+      return;
+    }
+
+    setStatus("success");
+    form.reset();
   };
 
   return (
@@ -91,12 +99,14 @@ export default function ContactSection() {
             </span>
           </button>
 
-          {status === "success" && (
-            <p className="text-center text-sm text-accent font-medium animate-[fade-in-up_0.3s_ease]">Thank you! We&apos;ll be in touch soon.</p>
-          )}
-          {status === "error" && (
-            <p className="text-center text-sm text-red-400 font-medium animate-[fade-in-up_0.3s_ease]">{errorMsg}</p>
-          )}
+          <div aria-live="polite">
+            {status === "success" && (
+              <p className="text-center text-sm text-accent font-medium animate-[fade-in-up_0.3s_ease]">Thank you! Your message has been sent. We&apos;ll get back to you soon.</p>
+            )}
+            {status === "error" && (
+              <p role="alert" className="text-center text-sm text-red-400 font-medium animate-[fade-in-up_0.3s_ease]">{errorMsg}</p>
+            )}
+          </div>
         </form>
       </div>
     </section>

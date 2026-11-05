@@ -10,23 +10,23 @@ const team = [
   {
     name: "Rihan Khan",
     role: "Founder & CEO",
-    bio: "Focused on Ground Strategy, Data Acquisition, and Execution. Brings a deep understanding of regional India's business landscape and practical implementation expertise.",
+    bio: "Leads SEED U's priorities and strategy, including problem discovery, field research, documentation, and day-to-day execution.",
     grad: "from-orange-600 to-amber-600",
     linkedInUrl: "https://www.linkedin.com/in/rihan-khan-8b98b93b9",
     imageUrl: "./rehan.png"
   },
   {
     name: "Armaan Dalmia",
-    role: "Co-Founder & Technical Strategy Head",
-    bio: "A young visionary focused on communication, networking, and transforming ideas into reality through decisive execution. Responsible for strategic partnerships and scaling operations.",
+    role: "Co-Founder",
+    bio: "Supports SEED U as Co-Founder, with a focus on communication and networking.",
     grad: "from-emerald-600 to-teal-600",
     linkedInUrl: "https://www.linkedin.com/in/armaan-dalmia-a30046219",
     imageUrl: "armaan.jpeg"
   },
   {
     name: "Dr. Rajiv Dalmia",
-    role: "Chief Mentor & Advisor",
-    bio: "Guiding institutional scaling, corporate governance, and commercial business planning for pan-India expansion.",
+    role: "Strategic Advisor & Mentor",
+    bio: "Provides strategic guidance and mentorship to SEED U on governance and business planning.",
     grad: "from-amber-600 to-orange-600",
     linkedInUrl: "https://www.linkedin.com/in/dr-rajiv-dalmia-%F0%9F%8C%9F-3b05672",
     imageUrl: "rajiv.jpeg"
@@ -63,7 +63,7 @@ export default function TeamSection() {
   }, []);
 
   return (
-    <section ref={ref} id="team" className="relative py-24 sm:py-32">
+    <section ref={ref} id="team" className="relative overflow-hidden py-24 sm:py-32">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[500px] w-[500px] rounded-full bg-primary/5 blur-[180px]" />
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
         <div className="team-header mx-auto max-w-3xl text-center">
@@ -74,8 +74,7 @@ export default function TeamSection() {
             The Minds Behind SEED U
           </h2>
           <p className="mt-4 text-lg leading-relaxed text-text-secondary">
-            Engineers, linguists, and dreamers united to make AI work for every
-            Indian.
+            The people building and guiding SEED U.
           </p>
         </div>
         <div className="team-grid mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">

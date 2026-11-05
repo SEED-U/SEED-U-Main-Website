@@ -83,7 +83,7 @@ export default function HeroSection() {
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-75" />
             <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
           </span>
-          Building India&apos;s AI Future
+          Early-stage initiative
         </div>
 
         {/* Heading */}
@@ -93,18 +93,18 @@ export default function HeroSection() {
         >
           {/* Responsive glow background */}
           <div className="absolute left-1/2 top-6 -z-10 h-[120px] w-[220px] -translate-x-1/2 rounded-full bg-[#D4673D]/25 blur-[60px] sm:h-[160px] sm:w-[320px] md:h-[200px] md:w-[420px] lg:left-[52%] lg:top-2 lg:h-[220px] lg:w-[520px] lg:blur-[90px]" />
-          India&apos;s First {/* Linguistic OS Badge */}
           <span className="relative inline-flex items-center justify-center border border-[#D4673D] px-4 py-1 text-nowrap">
             {/* Corner dots */}
             <span className="absolute -left-1 -top-1 h-2 w-2 rounded-full bg-white border border-[#D4673D]" />
             <span className="absolute -right-1 -top-1 h-2 w-2 rounded-full bg-white border border-[#D4673D]" />
             <span className="absolute -bottom-1 -left-1 h-2 w-2 rounded-full bg-white border border-[#D4673D]" />
             <span className="absolute -bottom-1 -right-1 h-2 w-2 rounded-full bg-white border border-[#D4673D]" />
-            Linguistic OS
-          </span>
+            Useful AI
+          </span>{" "}
+          for <span className="sm:whitespace-nowrap">India&apos;s Languages</span>
           <br />
           <span className="text-text-secondary text-[0.65em] font-normal leading-relaxed">
-            AI that truly speaks every Indian language
+            and Real-World Contexts
           </span>
         </h1>
 
@@ -113,16 +113,15 @@ export default function HeroSection() {
           ref={subRef}
           className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-text-secondary sm:text-xl"
         >
-          Verified multilingual datasets. Hallucination minimized RAG infrastructure.
-          A data-first ecosystem powering AI for{" "}
+          SEED U is an early-stage initiative focused on developing useful AI
+          experiences for Indian languages and local contexts. We are starting
+          with{" "}
           <span className="text-accent-warm font-medium">
-            22+ regional languages
+            Marathi Agriculture AI in Maharashtra
           </span>{" "}
-          and{" "}
-          <span className="text-accent-warm font-medium">
-            1.4 billion voices
-          </span>
-          .
+          — understanding farmers&apos; real needs, evaluating existing
+          services, and exploring how reliable, locally relevant AI assistance
+          could help.
         </p>
 
         {/* CTA Buttons */}
@@ -131,44 +130,47 @@ export default function HeroSection() {
           className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center"
         >
           <button
-            onClick={() => scrollTo("#about")}
+            onClick={() => scrollTo("#focus")}
             className="group relative cursor-pointer overflow-hidden rounded-full bg-gradient-to-r from-primary to-primary-light px-8 py-3.5 text-base font-semibold text-white shadow-lg shadow-primary/20 transition-all duration-300 hover:shadow-xl hover:scale-105 active:scale-95"
           >
-            <span className="relative z-10">Explore Our Vision</span>
+            <span className="relative z-10">See Our Current Focus</span>
           </button>
 
           <button
             onClick={() => scrollTo("#contact")}
             className="group cursor-pointer rounded-full border border-glass-border px-8 py-3.5 text-base font-semibold text-text-primary backdrop-blur-sm transition-all duration-300 hover:border-primary/50 hover:bg-primary/10 hover:scale-105 active:scale-95"
           >
-            Get Early Access
+            Get in Touch
             <span className="ml-2 inline-block transition-transform duration-300 group-hover:translate-x-1">
               →
             </span>
           </button>
         </div>
 
-        {/* Stats row */}
-        <div className="mt-16 grid grid-cols-3 gap-8 border-t border-glass-border pt-8">
+        {/* Current focus (factual, no unverified statistics) */}
+        <div className="mx-auto mt-14 grid max-w-3xl gap-3 border-t border-glass-border pt-8 sm:grid-cols-3 sm:gap-4">
           {[
-            { value: "22+", label: "Languages" },
-            { value: "500M+", label: "Users Underserved" },
-            { value: "95%", label: "AI Data Gap" },
-          ].map((stat) => (
-            <div key={stat.label} className="text-center">
-              <div className="text-2xl font-bold font-heading sm:text-3xl">
-                {stat.value}
-              </div>
-              <div className="mt-1 text-xs text-text-muted sm:text-sm">
-                {stat.label}
-              </div>
+            { value: "Marathi", label: "Starting language" },
+            { value: "Agriculture", label: "First focus area" },
+            { value: "Maharashtra", label: "Starting region" },
+          ].map((item) => (
+            <div
+              key={item.label}
+              className="flex items-center justify-between rounded-xl border border-glass-border bg-glass px-5 py-3 backdrop-blur-sm sm:flex-col sm:justify-center sm:gap-1 sm:py-4"
+            >
+              <span className="text-xs font-medium uppercase tracking-wider text-text-muted sm:order-2">
+                {item.label}
+              </span>
+              <span className="font-heading text-base font-semibold text-text-primary sm:text-xl">
+                {item.value}
+              </span>
             </div>
           ))}
         </div>
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-50">
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden flex-col items-center gap-2 opacity-50 lg:flex">
         <span className="text-xs text-text-muted">Scroll</span>
         <div className="cursor-pointer" onClick={() => scrollTo("#about")}>
           <ArrowDown className="h-6 w-6 animate-bounce" />

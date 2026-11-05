@@ -23,7 +23,7 @@ export default function Footer() {
 
           {/* Links */}
           <nav className="flex items-center gap-6">
-            {["Home", "About", "Team", "Contact"].map((link) => (
+            {["Home", "About", "Focus", "Team", "Contact"].map((link) => (
               <button
                 key={link}
                 onClick={() => scrollTo(`#${link.toLowerCase()}`)}
@@ -48,7 +48,7 @@ export default function Footer() {
 
         {/* Copyright */}
         <div className="mt-8 border-t border-glass-border pt-6 text-center text-xs text-text-muted">
-          © {year} SEED U. All rights reserved. Building India&apos;s Linguistic Future.
+          © {year} SEED U. All rights reserved. Useful AI for India&apos;s languages and local contexts.
         </div>
       </div>
     </footer>
