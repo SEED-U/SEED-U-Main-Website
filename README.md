@@ -1,36 +1,57 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# SEED U Website
 
-## Getting Started
+The official website for **SEED U**, which is building India's first linguistic operating system: verified multilingual datasets and AI infrastructure for 22+ regional languages.
 
-First, run the development server:
+## Tech stack
+
+- [Next.js](https://nextjs.org) 16 (App Router) with React 19 and TypeScript
+- [Tailwind CSS](https://tailwindcss.com) v4 for styling
+- [GSAP](https://gsap.com) with ScrollTrigger for scroll animations
+- [Nodemailer](https://nodemailer.com) for contact form emails over SMTP
+- Hosted on [Vercel](https://vercel.com)
+
+## Getting started
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The site runs at [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| Command         | What it does                     |
+| --------------- | -------------------------------- |
+| `npm run dev`   | Start the local dev server       |
+| `npm run build` | Create a production build        |
+| `npm run start` | Serve the production build       |
+| `npm run lint`  | Run ESLint                       |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Environment variables
 
-## Learn More
+The contact form needs SMTP credentials. For local development, create a `.env.local` file in the project root. It is gitignored, so never commit it.
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+SMTP_HOST=        # mail server, e.g. smtp.gmail.com or smtp.hostinger.com
+SMTP_PORT=        # 587 (STARTTLS) or 465 (SSL)
+SMTP_USER=        # address the site sends from
+SMTP_PASS=        # password or app password for SMTP_USER
+CONTACT_EMAIL=    # inbox that receives contact form messages
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+In production, these are set in the Vercel project under **Settings → Environment Variables**.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Project structure
 
-## Deploy on Vercel
+```
+app/
+├── api/contact/route.ts   # POST endpoint that emails contact form submissions
+├── components/            # Page sections (Hero, About, Team, India map, Contact, etc.)
+├── globals.css            # Tailwind setup and theme tokens
+├── layout.tsx             # Root layout, fonts and SEO metadata
+└── page.tsx               # Home page
+public/                    # Static assets
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Deployment
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The repository is connected to Vercel. A push to `main` deploys to production, and a push to any other branch creates a preview deployment.
